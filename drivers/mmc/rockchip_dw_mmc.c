@@ -78,6 +78,9 @@ static int rockchip_dwmmc_of_to_plat(struct udevice *dev)
 	else
 		host->dev_index = 1;
 
+	if (dev_read_bool(dev, "rockchip,invert-pwren-quirk"))
+		host->quirks |= DWMCI_QUIRK_INVERT_PWREN;
+
 	priv->fifo_depth = dev_read_u32_default(dev, "fifo-depth", 0);
 
 	if (priv->fifo_depth < 0)

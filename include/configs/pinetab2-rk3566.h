@@ -9,6 +9,6 @@
 #define ROCKCHIP_DEVICE_SETTINGS \
 			"stdout=serial,vidconsole\0" \
 			"stderr=serial,vidconsole\0" \
-			"bootmeths=extlinux efi\0"	
+			"bootmeths=extlinux efi\0"
 
 #endif

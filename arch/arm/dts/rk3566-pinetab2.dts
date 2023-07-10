@@ -1,9 +1,4 @@
-
-/*
- * SPDX-License-Identifier:     GPL-2.0+
- *
- * (C) Copyright 2023 Rockchip Electronics Co., Ltd
- */
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
 
 /dts-v1/;
 #include <dt-bindings/gpio/gpio.h>
@@ -22,8 +17,6 @@
 
 	chosen: chosen {
 		stdout-path = "serial2:1500000n8";
-		stderr-path = "serial2:1500000n8";
-		u-boot,spl-boot-order = "same-as-spl", &sdmmc0, &sdhci;
 	};
 
 	battery: battery {
@@ -414,7 +407,7 @@
 	cap-sd-highspeed;
 	cd-gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_LOW>;
 	disable-wp;
-	rockchip,invert-pwren-quirk;
+	rockchip,disable-pwren-quirk;
 	pinctrl-names = "default";
 	pinctrl-0 = <&sdmmc0_bus4 &sdmmc0_clk &sdmmc0_cmd &sdmmc0_det>;
 	sd-uhs-sdr104;

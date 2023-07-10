@@ -141,7 +141,7 @@
 
 /* quirks */
 #define DWMCI_QUIRK_DISABLE_SMU		(1 << 0)
-#define DWMCI_QUIRK_INVERT_PWREN	(1 << 1)
+#define DWMCI_QUIRK_DISABLE_PWREN	(1 << 1)
 
 /**
  * struct dwmci_host - Information about a designware MMC host

@@ -530,11 +530,8 @@ static int dwmci_init(struct mmc *mmc)
 	if (host->board_init)
 		host->board_init(host);
 
-	if (host->quirks & DWMCI_QUIRK_INVERT_PWREN) {
-		dwmci_writel(host, DWMCI_PWREN, 0);
-	} else {
+	if (!(host->quirks & DWMCI_QUIRK_DISABLE_PWREN))
 		dwmci_writel(host, DWMCI_PWREN, 1);
-	}	
 
 	if (!dwmci_wait_reset(host, DWMCI_RESET_ALL)) {
 		debug("%s[%d] Fail-reset!!\n", __func__, __LINE__);
